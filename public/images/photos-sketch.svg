@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Wedding photos sketch</title>
+  <desc id="desc">Simple hand-drawn style camera and photo prints illustration on warm paper background.</desc>
+  <rect width="1600" height="900" fill="#f3eadf"/>
+
+  <g opacity="0.22" stroke="#c8b8a5" stroke-width="3" fill="none">
+    <path d="M120 180c240-70 510-88 760-36s410 67 600 20"/>
+    <path d="M110 760c260-64 520-76 790-30s410 44 570 0"/>
+  </g>
+
+  <g transform="translate(0 10)" stroke="#6b5a49" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <rect x="430" y="360" width="740" height="360" rx="34" stroke-width="9"/>
+    <rect x="520" y="300" width="210" height="90" rx="20" stroke-width="8"/>
+    <circle cx="800" cy="545" r="130" stroke-width="9"/>
+    <circle cx="800" cy="545" r="68" stroke-width="7"/>
+    <circle cx="1035" cy="430" r="22" stroke-width="7"/>
+    <path d="M470 450h90" stroke-width="7"/>
+    <path d="M1040 650h90" stroke-width="7"/>
+
+    <g transform="translate(270 165) rotate(-9 180 180)">
+      <rect x="0" y="0" width="360" height="260" rx="12" stroke-width="6"/>
+      <rect x="32" y="32" width="296" height="178" rx="8" stroke-width="4"/>
+      <path d="M58 188l62-66 68 56 44-40 69 50" stroke-width="4"/>
+      <circle cx="116" cy="84" r="14" stroke-width="4"/>
+    </g>
+
+    <g transform="translate(960 175) rotate(8 170 165)">
+      <rect x="0" y="0" width="340" height="250" rx="12" stroke-width="6"/>
+      <rect x="30" y="30" width="280" height="170" rx="8" stroke-width="4"/>
+      <path d="M54 184l54-50 58 46 54-42 66 48" stroke-width="4"/>
+      <circle cx="106" cy="84" r="14" stroke-width="4"/>
+    </g>
+  </g>
+</svg>

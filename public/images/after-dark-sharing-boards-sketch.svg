@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">After-dark mini burgers and sandwiches</title>
+  <desc id="desc">Clean sketch-style serving board with mini burgers and sandwich triangles.</desc>
+
+  <rect width="1600" height="900" fill="#f5ede2"/>
+
+  <g opacity="0.18" stroke="#ccbba7" stroke-width="3" fill="none">
+    <path d="M120 170c250-70 530-88 790-34s420 68 580 20"/>
+    <path d="M90 760c250-62 530-78 790-30s430 46 620 0"/>
+  </g>
+
+  <g stroke="#6b5a49" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <rect x="250" y="420" width="1100" height="290" rx="24" stroke-width="8"/>
+    <rect x="300" y="455" width="1000" height="220" rx="14" stroke-width="4" opacity="0.55"/>
+
+    <g transform="translate(420 505)">
+      <ellipse cx="0" cy="0" rx="78" ry="22" stroke-width="5"/>
+      <path d="M-78 0v18c0 18 34 30 78 30s78-12 78-30V0" stroke-width="5"/>
+      <path d="M-56 6h112" stroke-width="4"/>
+      <path d="M-40 -11h80" stroke-width="4"/>
+    </g>
+
+    <g transform="translate(620 545)">
+      <ellipse cx="0" cy="0" rx="78" ry="22" stroke-width="5"/>
+      <path d="M-78 0v18c0 18 34 30 78 30s78-12 78-30V0" stroke-width="5"/>
+      <path d="M-56 6h112" stroke-width="4"/>
+      <path d="M-40 -11h80" stroke-width="4"/>
+    </g>
+
+    <g transform="translate(820 505)">
+      <ellipse cx="0" cy="0" rx="78" ry="22" stroke-width="5"/>
+      <path d="M-78 0v18c0 18 34 30 78 30s78-12 78-30V0" stroke-width="5"/>
+      <path d="M-56 6h112" stroke-width="4"/>
+      <path d="M-40 -11h80" stroke-width="4"/>
+    </g>
+
+    <g transform="translate(1020 545)">
+      <ellipse cx="0" cy="0" rx="78" ry="22" stroke-width="5"/>
+      <path d="M-78 0v18c0 18 34 30 78 30s78-12 78-30V0" stroke-width="5"/>
+      <path d="M-56 6h112" stroke-width="4"/>
+      <path d="M-40 -11h80" stroke-width="4"/>
+    </g>
+
+    <g transform="translate(1220 505)">
+      <ellipse cx="0" cy="0" rx="78" ry="22" stroke-width="5"/>
+      <path d="M-78 0v18c0 18 34 30 78 30s78-12 78-30V0" stroke-width="5"/>
+      <path d="M-56 6h112" stroke-width="4"/>
+      <path d="M-40 -11h80" stroke-width="4"/>
+    </g>
+
+    <g transform="translate(370 620)">
+      <polygon points="0,0 140,0 70,64" stroke-width="5"/>
+      <line x1="20" y1="18" x2="120" y2="18" stroke-width="4"/>
+      <line x1="34" y1="36" x2="106" y2="36" stroke-width="4"/>
+    </g>
+
+    <g transform="translate(610 610)">
+      <polygon points="0,0 150,0 75,68" stroke-width="5"/>
+      <line x1="22" y1="20" x2="128" y2="20" stroke-width="4"/>
+      <line x1="38" y1="40" x2="112" y2="40" stroke-width="4"/>
+    </g>
+
+    <g transform="translate(850 620)">
+      <polygon points="0,0 140,0 70,64" stroke-width="5"/>
+      <line x1="20" y1="18" x2="120" y2="18" stroke-width="4"/>
+      <line x1="34" y1="36" x2="106" y2="36" stroke-width="4"/>
+    </g>
+
+    <g transform="translate(1090 610)">
+      <polygon points="0,0 150,0 75,68" stroke-width="5"/>
+      <line x1="22" y1="20" x2="128" y2="20" stroke-width="4"/>
+      <line x1="38" y1="40" x2="112" y2="40" stroke-width="4"/>
+    </g>
+
+    <path d="M318 390h158M1124 390h158" stroke-width="6"/>
+  </g>
+</svg>
