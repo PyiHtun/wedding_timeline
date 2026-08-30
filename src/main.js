@@ -170,7 +170,7 @@ const timeline = [
     nested: true
   },
   {
-    time: '4:00/4:30 PM',
+    time: 'From 4:00 PM',
     title: 'From the Grill',
     subtitle: 'Fresh from the Grill with sides, salads & desserts',
     icon: 'grill',
@@ -250,7 +250,7 @@ const timeline = [
     nested: true
   },
   {
-    time: '10:00–10:30 PM',
+    time: '10:00 PM',
     title: 'After-Dark Sharing Boards',
     subtitle: 'Burgers & sandwiches',
     icon: 'food',
