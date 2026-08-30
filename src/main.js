@@ -55,6 +55,16 @@ const icons = {
       <ellipse cx="20" cy="47" rx="7" ry="5"/>
       <ellipse cx="43" cy="43" rx="7" ry="5"/>
     </svg>`,
+  couple: `
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+      <circle cx="23" cy="16" r="5"/>
+      <circle cx="41" cy="16" r="5"/>
+      <path d="M16 36l7-12 7 12v16h-14z"/>
+      <path d="M35 24h12v28H35z"/>
+      <path d="M35 36h12"/>
+      <path d="M23 29v23M41 29v23"/>
+      <path d="M26 45l6-3 6 3"/>
+    </svg>`,
   food: `
     <svg viewBox="0 0 64 64" aria-hidden="true">
       <path d="M11 20h42"/>
@@ -105,8 +115,9 @@ const timeline = [
     detail: 'Family, group and couple photographs after the ceremony.',
     website: links.curveWebsite,
     map: links.curveMap,
-    image: './images/photos-sketch.svg',
-    imageAlt: 'Simple sketch for wedding photography'
+    image: './images/photo-event.png',
+    imageFit: 'contain',
+    imageAlt: 'Wedding photo event'
   },
   {
     time: '2:00 PM -  12:00 AM',
@@ -122,7 +133,7 @@ const timeline = [
     groupStart: true
   },
   {
-    time: '2:30 PM',
+    time: '2:00 PM',
     title: 'Welcome Drinks & Canapés',
     subtitle: 'Sharing boards on arrival',
     icon: 'drinks',
@@ -146,6 +157,17 @@ const timeline = [
         }
       ]
     }
+  },
+  {
+    time: '2:20 PM',
+    title: 'Couple Walk-In',
+    subtitle: 'Grand entrance',
+    icon: 'couple',
+    detail: 'Bride and groom walk in to welcome everyone.',
+    image: './images/walk-in.png',
+    imageFit: 'contain',
+    imageAlt: 'Sketch of couple walk-in celebration',
+    nested: true
   },
   {
     time: '4:00/4:30 PM',
@@ -201,8 +223,9 @@ const timeline = [
     subtitle: 'Followed by DJ & dancing',
     icon: 'cake',
     detail: 'Cake cutting followed by music, dancing and drinks.',
-    image: './images/cake-cutting-sketch.svg',
-    imageAlt: 'Simple wedding cake sketch illustration',
+    image: './images/cake-event.png',
+    imageFit: 'contain',
+    imageAlt: 'Wedding cake event',
     nested: true
   },
   {
@@ -340,6 +363,7 @@ function openSheet(index, trigger) {
     sheetImagePlaceholder.hidden = true
     sheetImage.src = item.image
     sheetImage.alt = item.imageAlt ?? ''
+    sheetImage.style.objectFit = item.imageFit ?? 'cover'
 
     sheetImage.onerror = () => {
       sheetImage.hidden = true

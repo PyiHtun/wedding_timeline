@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Couple walk-in watercolor style</title>
+  <desc id="desc">Soft watercolor-style illustration of bride and groom walking in from the back.</desc>
+
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8f4ee"/>
+      <stop offset="100%" stop-color="#f1e8dc"/>
+    </linearGradient>
+    <linearGradient id="groomSuit" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4f555c"/>
+      <stop offset="100%" stop-color="#353a40"/>
+    </linearGradient>
+    <linearGradient id="dressShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbf8f2"/>
+      <stop offset="100%" stop-color="#e8dccd"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#paper)"/>
+
+  <ellipse cx="800" cy="790" rx="360" ry="44" fill="#d8cec1" opacity="0.45"/>
+
+  <g opacity="0.2" fill="none" stroke="#d8ccbe" stroke-width="3">
+    <path d="M120 185c220-65 515-92 780-32s435 60 580 15"/>
+    <path d="M120 750c230-55 505-88 790-35s430 50 580 6"/>
+  </g>
+
+  <g transform="translate(0 20)">
+    <g transform="translate(615 200)">
+      <ellipse cx="0" cy="45" rx="42" ry="52" fill="#5a4539" opacity="0.22"/>
+      <path d="M-44 35c8-38 22-57 44-57 22 0 37 19 45 57-8 28-23 45-45 45-21 0-36-17-44-45z" fill="#6a5143"/>
+      <path d="M-46 93c0-18 20-34 46-34 26 0 47 16 47 34v42h-93z" fill="#f4efe7" opacity="0.95"/>
+      <path d="M-32 140c7-25 17-38 32-47 16 9 25 22 33 47v212h-65z" fill="#f8f4ec"/>
+      <path d="M-130 520c16-185 62-303 130-330 68 27 114 145 130 330z" fill="url(#dressShade)"/>
+      <path d="M-128 520c19-63 67-106 128-106 61 0 110 43 128 106" fill="none" stroke="#d9ccbc" stroke-width="4" opacity="0.65"/>
+      <path d="M-22 282v258" stroke="#cec0ae" stroke-width="4" opacity="0.6"/>
+      <path d="M20 288v252" stroke="#d8cab8" stroke-width="3" opacity="0.55"/>
+      <path d="M-130 520l-66 48" stroke="#d2c3b0" stroke-width="5" opacity="0.65"/>
+
+      <g transform="translate(-174 350)">
+        <ellipse cx="0" cy="0" rx="24" ry="18" fill="#d7c8b3"/>
+        <ellipse cx="24" cy="-10" rx="20" ry="14" fill="#e2d7c7"/>
+        <ellipse cx="44" cy="8" rx="22" ry="15" fill="#c9b9a2"/>
+        <ellipse cx="10" cy="22" rx="20" ry="13" fill="#ddcfbd"/>
+        <ellipse cx="38" cy="26" rx="18" ry="12" fill="#cfc0ac"/>
+      </g>
+    </g>
+
+    <g transform="translate(930 194)">
+      <ellipse cx="0" cy="42" rx="38" ry="48" fill="#4a3d34" opacity="0.24"/>
+      <path d="M-38 34c8-34 20-52 38-52 19 0 32 18 40 52-7 26-20 42-40 42-18 0-31-16-38-42z" fill="#5a4a40"/>
+      <path d="M-82 126c7-35 36-56 82-56 46 0 74 21 82 56v264h-164z" fill="url(#groomSuit)"/>
+      <path d="M-22 130h44v246h-44z" fill="#f4f2ed" opacity="0.75"/>
+      <path d="M-64 208h128" stroke="#787d83" stroke-width="4" opacity="0.7"/>
+      <path d="M-40 390v128M52 390v128" stroke="#3d4248" stroke-width="9"/>
+      <path d="M-62 520h50M26 520h50" stroke="#6f5640" stroke-width="7"/>
+      <path d="M54 502l30 10" stroke="#7b5e43" stroke-width="7"/>
+    </g>
+
+    <path d="M736 392c55 29 108 29 162 0" fill="none" stroke="#d5c6b2" stroke-width="5"/>
+
+    <g fill="#c3b09a" opacity="0.55">
+      <circle cx="510" cy="165" r="6"/>
+      <circle cx="560" cy="140" r="5"/>
+      <circle cx="1080" cy="152" r="6"/>
+      <circle cx="1030" cy="132" r="5"/>
+      <circle cx="798" cy="120" r="5"/>
+    </g>
+  </g>
+</svg>
