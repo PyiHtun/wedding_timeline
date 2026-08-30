@@ -1,8 +1,8 @@
 
 :root {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #2d2a27;
-  background: #f6f1ea;
+  color: #2f4050;
+  background: #eef7ff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
@@ -19,7 +19,7 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at top, rgba(255, 255, 255, .95), rgba(246, 241, 234, .92) 38%, #efe7dd 100%);
+    radial-gradient(circle at top, rgba(255, 255, 255, .98), rgba(230, 244, 255, .95) 38%, #ffe7a8 100%);
 }
 
 button,
@@ -138,7 +138,7 @@ button {
 .hero-note {
   margin: 14px auto 0;
   max-width: none;
-  color: #4f473f;
+  color: #3f5567;
   font-family: "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
   font-style: italic;
   font-size: clamp(.84rem, 2.75vw, 1.06rem);
@@ -153,7 +153,7 @@ button {
 
 .date {
   margin: 18px 0 0;
-  color: #756d65;
+  color: #5f7390;
   font-size: .84rem;
   letter-spacing: .04em;
 }
@@ -170,7 +170,7 @@ button {
   top: 34px;
   bottom: 34px;
   width: 1px;
-  background: #bfb5aa;
+  background: #9ec4ea;
 }
 
 .timeline-item {
@@ -193,11 +193,11 @@ button {
 }
 
 .timeline-item:hover {
-  background: rgba(255, 255, 255, .54);
+  background: rgba(255, 255, 255, .72);
 }
 
 .timeline-item:focus-visible {
-  outline: 2px solid #8a7561;
+  outline: 2px solid #5f9edd;
   outline-offset: 3px;
 }
 
@@ -206,7 +206,7 @@ button {
   height: 46px;
   display: inline-grid;
   place-items: center;
-  color: #3f3a36;
+  color: #365f8a;
 }
 
 .timeline-icon svg {
@@ -225,16 +225,16 @@ button {
   width: 22px;
   height: 22px;
   margin-left: 15px;
-  border: 1.5px solid #8e8378;
+  border: 1.5px solid #87b4e0;
   border-radius: 50%;
-  background: #f6f1ea;
+  background: #eef7ff;
   transition: all 160ms ease;
 }
 
 .timeline-item:hover .timeline-marker,
 .timeline-item:focus-visible .timeline-marker {
-  border-color: #4b4037;
-  background: #ded0c1;
+  border-color: #497db2;
+  background: #ffd86b;
   transform: scale(1.08);
 }
 
@@ -262,13 +262,77 @@ button {
 .timeline-subtitle {
   display: block;
   margin-top: 5px;
-  color: #776e66;
+  color: #5b728a;
   font-size: .78rem;
   line-height: 1.35;
 }
 
+.timeline-toggle {
+  display: grid;
+  grid-template-columns: 30px auto;
+  column-gap: 10px;
+  row-gap: 2px;
+  margin-top: 8px;
+  color: #395a79;
+  font-size: .74rem;
+  letter-spacing: .02em;
+}
+
+.timeline-toggle-icon {
+  width: 30px;
+  height: 30px;
+  border: 1.8px solid #6fa3d9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #2d4f73;
+  background: #d7ecff;
+  grid-row: 1 / span 2;
+  padding-top: 0;
+}
+
+.timeline-toggle-label {
+  display: block;
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .11em;
+  color: #3c6082;
+}
+
+.timeline-toggle-text {
+  display: block;
+  font-size: .74rem;
+  font-weight: 600;
+  color: #476684;
+}
+
+.timeline-item--group-start[aria-expanded="true"] .timeline-toggle-icon {
+  background: #ffd978;
+  border-color: #c89f32;
+  color: #6c5311;
+}
+
 .timeline-item--group-start {
   margin-top: 10px;
+}
+
+.timeline-item--group-start[aria-expanded="false"] .timeline-toggle-icon {
+  animation: toggle-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes toggle-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(93, 146, 204, .18);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(93, 146, 204, 0);
+  }
 }
 
 .timeline-item--nested {
@@ -284,19 +348,19 @@ button {
   width: 15px;
   height: 15px;
   margin-left: 18.5px;
-  background: #e8dfd5;
+  background: #dceeff;
 }
 
 .timeline-item--nested .timeline-copy {
   margin-left: 10px;
-  border-left: 2px solid #ddd0c2;
+  border-left: 2px solid #b8d8f7;
   padding-left: 18px;
 }
 
 .footer {
   text-align: center;
   margin-top: 36px;
-  color: #6c645d;
+  color: #4f6986;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.1rem;
   font-style: italic;
@@ -309,7 +373,7 @@ button {
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(35, 30, 26, .52);
+  background: rgba(34, 61, 94, .3);
   backdrop-filter: blur(3px);
   z-index: 20;
 }
@@ -324,9 +388,9 @@ button {
   max-height: calc(100% - 36px);
   overflow: auto;
   border-radius: 24px;
-  background: #fffdf9;
+  background: #f9fcff;
   padding: 18px 18px 22px;
-  box-shadow: 0 20px 60px rgba(36, 30, 26, .25);
+  box-shadow: 0 20px 60px rgba(41, 74, 111, .2);
 }
 
 .sheet-close {
@@ -339,7 +403,7 @@ button {
   border: 0;
   border-radius: 50%;
   background: rgba(255, 255, 255, .9);
-  color: #332f2b;
+  color: #3e5e80;
   cursor: pointer;
   font-size: 1.65rem;
   line-height: 1;
@@ -350,7 +414,7 @@ button {
   aspect-ratio: 16 / 8.5;
   overflow: hidden;
   border-radius: 16px;
-  background: #ebe4db;
+  background: #ddeeff;
 }
 
 .sheet-image {
@@ -365,7 +429,7 @@ button {
   height: 100%;
   display: grid;
   place-items: center;
-  color: #827a73;
+  color: #6c84a0;
   font-size: .83rem;
   letter-spacing: .04em;
 }
@@ -387,13 +451,13 @@ button {
 
 .sheet-venue {
   margin: 7px 0 0;
-  color: #5c544d;
+  color: #496e98;
   font-weight: 650;
 }
 
 .sheet-detail {
   margin: 14px 0 0;
-  color: #655d56;
+  color: #4d6680;
   line-height: 1.6;
 }
 
@@ -404,8 +468,8 @@ button {
 .menu-card {
   position: relative;
   padding: 22px 18px;
-  border: 1px solid #d7c9b7;
-  background: #fdfaf5;
+  border: 1px solid #c4dcf3;
+  background: #f7fbff;
   border-radius: 10px;
   text-align: center;
 }
@@ -428,7 +492,7 @@ button {
 .menu-section + .menu-section {
   margin-top: 25px;
   padding-top: 22px;
-  border-top: 1px solid #e8e0d8;
+  border-top: 1px solid #deecfa;
 }
 
 .menu-section h4 {
@@ -436,7 +500,7 @@ button {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.05rem;
   font-weight: 600;
-  color: #5f5347;
+  color: #466b95;
 }
 
 .menu-section ul {
@@ -450,7 +514,7 @@ button {
   margin: 0 auto;
   max-width: 44ch;
   padding: 5px 18px;
-  color: #665e57;
+  color: #4f6985;
   font-family: Georgia, "Times New Roman", serif;
   line-height: 1.45;
 }
@@ -469,7 +533,7 @@ button {
   gap: 14px;
   text-decoration: none;
   color: #fff;
-  background: #3e3832;
+  background: #5d9edf;
   border-radius: 999px;
   padding: 0 18px;
   font-weight: 700;
@@ -477,7 +541,7 @@ button {
 }
 
 .sheet-link:hover {
-  background: #27231f;
+  background: #3f85cb;
 }
 
 [hidden] {

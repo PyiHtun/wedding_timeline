@@ -115,13 +115,13 @@ const timeline = [
     detail: 'Family, group and couple photographs after the ceremony.',
     website: links.curveWebsite,
     map: links.curveMap,
-    image: './images/photo-event.png',
+    image: './images/snap.png',
     imageFit: 'contain',
     imageAlt: 'Wedding photo event'
   },
   {
     time: '2:00 PM -  12:00 AM',
-    title: 'Wedding Reception & Welcome',
+    title: 'Wedding Reception',
     subtitle: 'The Crown Inn',
     icon: 'reception',
     venue: 'The Crown Inn',
@@ -160,7 +160,7 @@ const timeline = [
   },
   {
     time: '2:20 PM',
-    title: 'Couple Walk-In',
+    title: 'Arrival of the Newlyweds',
     subtitle: 'Grand entrance',
     icon: 'couple',
     detail: 'Bride and groom walk in to welcome everyone.',
@@ -219,18 +219,29 @@ const timeline = [
   },
   {
     time: '7:00 PM',
-    title: 'Cake Cutting',
-    subtitle: 'Followed by DJ & dancing',
+    title: 'Speech & Cake',
+    subtitle: 'Toasts and cake moment',
     icon: 'cake',
-    detail: 'Cake cutting followed by music, dancing and drinks.',
-    image: './images/cake-event.png',
+    detail: 'Wedding speeches followed by cake.',
+    image: './images/speech-cake.png',
     imageFit: 'contain',
     imageAlt: 'Wedding cake event',
     nested: true
   },
   {
-    time: '7:15 PM',
-    title: 'DJ & Dancing',
+    time: '7:30 PM',
+    title: "Couple’s First Dance",
+    subtitle: 'A special moment',
+    icon: 'music',
+    detail: 'The newlyweds take the floor for their first dance.',
+    image: './images/dance.png',
+    imageFit: 'contain',
+    imageAlt: 'Couple first dance',
+    nested: true
+  },
+  {
+    time: '8:00 PM',
+    title: 'DJ and Dancing',
     subtitle: 'Celebrate with us',
     icon: 'music',
     detail: 'DJ, dancing, drinks and evening celebration.',
@@ -253,13 +264,25 @@ const timeline = [
 function eventMarkup(item, index) {
   const nestedClass = item.nested ? ' timeline-item--nested' : ''
   const groupClass = item.groupStart ? ' timeline-item--group-start' : ''
+  const toggleMarkup = item.groupStart
+    ? `
+      <span class="timeline-toggle" aria-hidden="true">
+        <span class="timeline-toggle-icon">▾</span>
+        <span class="timeline-toggle-label">EXPAND</span>
+        <span class="timeline-toggle-text">Tap to view full reception schedule</span>
+      </span>
+    `
+    : ''
+  const expandedAttr = item.groupStart ? 'aria-expanded="false"' : ''
+  const actionLabel = item.groupStart ? 'Toggle reception schedule' : 'Open details'
 
   return `
     <button
       class="timeline-item${nestedClass}${groupClass}"
       type="button"
       data-index="${index}"
-      aria-label="${item.time}, ${item.title}. Open details"
+      ${expandedAttr}
+      aria-label="${item.time}, ${item.title}. ${actionLabel}"
     >
       <span class="timeline-icon">${icons[item.icon]}</span>
       <span class="timeline-marker" aria-hidden="true"></span>
@@ -267,6 +290,7 @@ function eventMarkup(item, index) {
         <span class="timeline-time">${item.time}</span>
         <span class="timeline-title">${item.title}</span>
         <span class="timeline-subtitle">${item.subtitle ?? ''}</span>
+        ${toggleMarkup}
       </span>
     </button>
   `
@@ -337,6 +361,92 @@ const mapLink = document.querySelector('.map-link')
 const menuContainer = document.querySelector('.sheet-menu')
 
 let lastFocused = null
+const groupStates = new Map()
+
+function groupedNestedIndexes(startIndex) {
+  const nestedIndexes = []
+
+  for (let i = startIndex + 1; i < timeline.length; i += 1) {
+    if (timeline[i].groupStart) {
+      break
+    }
+
+    if (timeline[i].nested) {
+      nestedIndexes.push(i)
+    }
+  }
+
+  return nestedIndexes
+}
+
+function setGroupExpanded(startIndex, expanded) {
+  const startButton = document.querySelector(`.timeline-item[data-index="${startIndex}"]`)
+  const nestedIndexes = groupedNestedIndexes(startIndex)
+
+  if (!startButton || nestedIndexes.length === 0) {
+    return
+  }
+
+  startButton.setAttribute('aria-expanded', String(expanded))
+  const toggleText = startButton.querySelector('.timeline-toggle')
+
+  if (toggleText) {
+    const toggleIcon = toggleText.querySelector('.timeline-toggle-icon')
+    const toggleLabel = toggleText.querySelector('.timeline-toggle-label')
+    const toggleHint = toggleText.querySelector('.timeline-toggle-text')
+
+    if (toggleIcon) {
+      toggleIcon.textContent = expanded ? '▴' : '▾'
+    }
+
+    if (toggleLabel) {
+      toggleLabel.textContent = expanded ? 'COLLAPSE' : 'EXPAND'
+    }
+
+    if (toggleHint) {
+      toggleHint.textContent = expanded
+        ? 'Tap again to hide reception schedule'
+        : 'Tap to view full reception schedule'
+    }
+  }
+
+  nestedIndexes.forEach(index => {
+    const nestedButton = document.querySelector(`.timeline-item[data-index="${index}"]`)
+
+    if (nestedButton) {
+      nestedButton.hidden = !expanded
+    }
+  })
+
+  groupStates.set(startIndex, expanded)
+}
+
+function scrollExpandedGroupIntoView(startIndex) {
+  const startButton = document.querySelector(`.timeline-item[data-index="${startIndex}"]`)
+
+  if (!startButton) {
+    return
+  }
+
+  requestAnimationFrame(() => {
+    const firstNestedIndex = groupedNestedIndexes(startIndex)[0]
+    const firstNestedButton = firstNestedIndex !== undefined
+      ? document.querySelector(`.timeline-item[data-index="${firstNestedIndex}"]`)
+      : null
+
+    const bottomLimit = window.innerHeight - 20
+    const startRect = startButton.getBoundingClientRect()
+    const nestedRect = firstNestedButton ? firstNestedButton.getBoundingClientRect() : null
+    const needsScroll = nestedRect ? nestedRect.bottom > bottomLimit : startRect.bottom > bottomLimit
+
+    if (needsScroll) {
+      startButton.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  })
+}
 
 function closeSheet() {
   sheet.hidden = true
@@ -420,8 +530,29 @@ function openSheet(index, trigger) {
 
 document.querySelectorAll('.timeline-item').forEach(button => {
   button.addEventListener('click', () => {
-    openSheet(Number(button.dataset.index), button)
+    const index = Number(button.dataset.index)
+    const item = timeline[index]
+
+    if (item.groupStart) {
+      const expanded = groupStates.get(index) ?? false
+      const nextExpanded = !expanded
+      setGroupExpanded(index, nextExpanded)
+
+      if (nextExpanded) {
+        scrollExpandedGroupIntoView(index)
+      }
+
+      return
+    }
+
+    openSheet(index, button)
   })
+})
+
+timeline.forEach((item, index) => {
+  if (item.groupStart) {
+    setGroupExpanded(index, false)
+  }
 })
 
 closeButton.addEventListener('click', closeSheet)
